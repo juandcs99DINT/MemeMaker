@@ -123,11 +123,14 @@
                     BorderBrush="Black"
                     Margin="10">
                 <Grid>
-                    <Image Stretch="Fill" />
+                    <Image Stretch="Fill" Source="{Binding ElementName=imagenTextBox, Path=Text}"
+                           Width="{Binding ElementName=anchoSlider, Path=Value}"
+                           Height="{Binding ElementName=altoSlider, Path=Value}"
+                           Border="{Binding ElementName=}"/>
                     <TextBlock Style="{StaticResource textoMeme}"
-                               VerticalAlignment="Top"></TextBlock>
+                               VerticalAlignment="Top" Text="{Binding ElementName=superiorTextBox, Path=Text}"></TextBlock>
                     <TextBlock Style="{StaticResource textoMeme}"
-                               VerticalAlignment="Bottom"></TextBlock>
+                               VerticalAlignment="Bottom" Text="{Binding ElementName=inferiorTextBox, Path=Text}"></TextBlock>
                 </Grid>
             </Border>
         </StackPanel>
