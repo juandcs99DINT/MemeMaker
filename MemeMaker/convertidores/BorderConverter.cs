@@ -15,19 +15,8 @@ namespace MemeMaker
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             bool bordeChecked = (bool)value;
-            Border borde;
-            if (bordeChecked)
-            {
-                borde = new Border
-                {
-                    BorderBrush = Brushes.Black
-                    // border thickness
-                };
-            }
-            else
-            {
-               borde = null;
-            }
+            if (bordeChecked) return new System.Windows.Thickness(3);
+            else return new System.Windows.Thickness(0);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

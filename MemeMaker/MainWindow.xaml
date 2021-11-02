@@ -60,6 +60,8 @@
             <Setter Property="HorizontalAlignment"
                     Value="Left"></Setter>
         </Style>
+
+        <local:BorderConverter x:Key="BordeConverter"></local:BorderConverter>
     </Window.Resources>
 
     <ScrollViewer HorizontalScrollBarVisibility="Auto"
@@ -121,12 +123,12 @@
             </Grid>
             <Border Background="#FFF3D2D2"
                     BorderBrush="Black"
-                    Margin="10">
+                    Margin="10"
+                    BorderThickness="{Binding ElementName=bordeCheckBox, Path=IsChecked, Converter={StaticResource BordeConverter}}">
                 <Grid>
                     <Image Stretch="Fill" Source="{Binding ElementName=imagenTextBox, Path=Text}"
                            Width="{Binding ElementName=anchoSlider, Path=Value}"
-                           Height="{Binding ElementName=altoSlider, Path=Value}"
-                           Border="{Binding ElementName=}"/>
+                           Height="{Binding ElementName=altoSlider, Path=Value}"/>
                     <TextBlock Style="{StaticResource textoMeme}"
                                VerticalAlignment="Top" Text="{Binding ElementName=superiorTextBox, Path=Text}"></TextBlock>
                     <TextBlock Style="{StaticResource textoMeme}"
